@@ -1,0 +1,60 @@
+from docx import Document
+from docx.shared import Inches
+
+# Crear un nuevo documento de Word
+doc = Document()
+
+# Título del documento
+doc.add_heading('Conversión de Millas a Kilómetros', 0)
+
+# 1. Diagrama de Flujo
+doc.add_heading('Diagrama de Flujo', level=1)
+doc.add_paragraph('El siguiente diagrama de flujo muestra el proceso para convertir millas a kilómetros:')
+doc.add_picture(image_path, width=Inches(6))
+
+# 2. Análisis del problema
+doc.add_heading('Análisis del Problema', level=1)
+doc.add_paragraph(
+    "En este problema, se requiere convertir una distancia dada en millas a kilómetros. "
+    "La relación entre millas y kilómetros es que 1 milla equivale a 1.609344 kilómetros."
+)
+
+doc.add_heading('Datos de Entrada:', level=2)
+doc.add_paragraph('Millas (millas)')
+
+doc.add_heading('Datos de Salida:', level=2)
+doc.add_paragraph('Kilómetros (kilometros)')
+
+doc.add_heading('Proceso:', level=2)
+doc.add_paragraph(
+    "1. Leer la cantidad de millas\n"
+    "2. Convertir las millas a kilómetros usando la fórmula kilometros = millas * 1.609344\n"
+    "3. Mostrar el resultado en kilómetros"
+)
+
+doc.add_heading('Identificadores Adicionales:', level=2)
+doc.add_paragraph('Ninguno')
+
+# 3. Pseudocódigo
+doc.add_heading('Pseudocódigo', level=1)
+pseudo_code = """
+Inicio
+    Leer millas
+    kilometros = millas * 1.609344
+    Mostrar kilometros
+Fin
+"""
+doc.add_paragraph(pseudo_code)
+
+# 4. URL del Programa en GitHub
+doc.add_heading('URL del Programa en GitHub', level=1)
+doc.add_paragraph(
+    "Puedes encontrar el código Python para la conversión de millas a kilómetros en el siguiente enlace:\n"
+    "https://github.com/tu_usuario/tu_repositorio"
+)
+
+# Guardar el documento
+file_path = "/mnt/data/Conversion_Millas_Kilometros.docx"
+doc.save(file_path)
+
+file_path
